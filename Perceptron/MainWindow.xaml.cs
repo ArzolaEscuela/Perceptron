@@ -147,7 +147,20 @@ namespace Perceptron
 
         private void CheckForErrors()
         {
+            string errors = string.Empty;
 
+            double americanTotal = American_Age_Weight.AsFloat() + American_Height_Weight.AsFloat() + American_IMC_Weight.AsFloat();
+            if (Math.Abs(americanTotal - 100) > 0.01)
+            {
+                errors += $"La suma de los % de aptitud para los criterios de Futbol Americano deben dar 100%, actualmente da: {americanTotal}%.\n";
+            }
+            double gymnasticsTotal = Gymnastics_Age_Weight.AsFloat() + Gymnastics_Height_Weight.AsFloat() + Gymnastics_IMC_Weight.AsFloat();
+            if (Math.Abs(gymnasticsTotal - 100) > 0.01)
+            {
+                errors += $"La suma de los % de aptitud para los criterios de Gimnasia deben dar 100%, actualmente da: {gymnasticsTotal}%.\n";
+            }
+
+            Errors_Textbox.Text = errors;
         }
 
         #region Settings

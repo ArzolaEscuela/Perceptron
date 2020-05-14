@@ -1,0 +1,113 @@
+{
+  "ParameterSettings": {
+    "GymnasticsSettings": {
+      "MinAge": 6,
+      "MaxAge": 25,
+      "AgeWeight": 30.0,
+      "MinHeight": 1.3,
+      "MaxHeight": 1.6,
+      "HeightWeight": 30.0,
+      "MinIMC": 16.5,
+      "MaxIMC": 25.0,
+      "IMCWeight": 40.0
+    },
+    "AmericanFootballSettings": {
+      "MinAge": 16,
+      "MaxAge": 35,
+      "AgeWeight": 45.0,
+      "MinHeight": 1.72,
+      "MaxHeight": 1.88,
+      "HeightWeight": 20.0,
+      "MinIMC": 21.0,
+      "MaxIMC": 28.0,
+      "IMCWeight": 35.0
+    }
+  },
+  "TestData": [
+    {
+      "Edad": 20,
+      "Estatura": 1.8,
+      "Peso": 79.8,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": true
+    },
+    {
+      "Edad": 6,
+      "Estatura": 1.15,
+      "Peso": 20.1,
+      "AptoParaAmericano": false,
+      "AptoParaGimnasia": true
+    },
+    {
+      "Edad": 10,
+      "Estatura": 1.38,
+      "Peso": 28.6,
+      "AptoParaAmericano": false,
+      "AptoParaGimnasia": true
+    },
+    {
+      "Edad": 13,
+      "Estatura": 1.56,
+      "Peso": 45.8,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": true
+    },
+    {
+      "Edad": 15,
+      "Estatura": 1.6,
+      "Peso": 84.2,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": false
+    },
+    {
+      "Edad": 18,
+      "Estatura": 1.7,
+      "Peso": 94.2,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": false
+    },
+    {
+      "Edad": 23,
+      "Estatura": 1.79,
+      "Peso": 89.2,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": false
+    },
+    {
+      "Edad": 26,
+      "Estatura": 1.72,
+      "Peso": 75.2,
+      "AptoParaAmericano": true,
+      "AptoParaGimnasia": true
+    },
+    {
+      "Edad": 3,
+      "Estatura": 0.94,
+      "Peso": 14.5,
+      "AptoParaAmericano": false,
+      "AptoParaGimnasia": false
+    }
+  ],
+  "InputData": [
+    {
+      "Edad": 9,
+      "Estatura": 1.333,
+      "Peso": 29.3
+    },
+    {
+      "Edad": 17,
+      "Estatura": 1.67,
+      "Peso": 68.4
+    },
+    {
+      "Edad": 30,
+      "Estatura": 1.72,
+      "Peso": 95.1
+    },
+    {
+      "Edad": 25,
+      "Estatura": 1.7,
+      "Peso": 70.8
+    }
+  ]
+}
