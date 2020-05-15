@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Perceptron"
         mc:Ignorable="d"
-        Title="Perceptron - Aptitud Deportiva - Luis Arzola (A01186956)" Height="630" Width="966" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Perceptron - Aptitud Deportiva - Luis Arzola (A01186956)" Height="730.383" Width="656" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -13,78 +13,36 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Slider x:Name="American_Age_Slider" HorizontalAlignment="Left" Margin="254,91,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <Label Content="Rangos Válidos para Determinar Aptitud" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="858" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="18"/>
-        <Label Content="Fútbol Americano" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,85,0,0" Width="151" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="30"/>
-        <Label Content="Gimnasia" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,123,0,0" Width="151" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <TextBox x:Name="American_Age_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="357,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187,66,0,0" Width="28"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <TextBox x:Name="American_Min_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="186,91,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="29" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="American_Max_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="220,91,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="27" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="389,91,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="219,66,0,0" Width="29"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <Label Content="Influencia en Aptitud (%)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,63,0,0" Width="154"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="22"/>
-        <Slider x:Name="Gymnastics_Age_Slider" HorizontalAlignment="Left" Margin="254,129,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <TextBox x:Name="Gymnastics_Age_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="357,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_Min_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="186,129,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="29" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_Max_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="220,129,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="27" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="389,129,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Separator  HorizontalAlignment="Left" Height="12" Margin="373,92,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
-        <Label Content="Edad (Años)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="186,39,0,0" Width="220"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
-        <Slider x:Name="American_Height_Slider" HorizontalAlignment="Left" Margin="517,91,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <TextBox x:Name="American_Height_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="620,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="442,66,0,0" Width="32"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="652,91,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="479,66,0,0" Width="32"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <Label Content="Influencia en Aptitud (%)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="515,63,0,0" Width="154"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="22"/>
-        <Slider x:Name="Gymnastics_Height_Slider" HorizontalAlignment="Left" Margin="517,129,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <TextBox x:Name="Gymnastics_Height_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="620,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="652,129,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Separator  HorizontalAlignment="Left" Height="12" Margin="639,92,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
-        <Label Content="Estatura (m)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="449,39,0,0" Width="220"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
-        <Slider x:Name="American_IMC_Slider" HorizontalAlignment="Left" Margin="782,91,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <TextBox x:Name="American_IMC_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="885,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="706,66,0,0" Width="32"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="917,91,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="743,66,0,0" Width="33"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
-        <Label Content="Influencia en Aptitud (%)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="780,63,0,0" Width="154"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="22"/>
-        <Slider x:Name="Gymnastics_IMC_Slider" HorizontalAlignment="Left" Margin="782,129,0,0" VerticalAlignment="Top" Width="100" Maximum="100" TickFrequency="10" LargeChange="10" Minimum="1" Value="1" TickPlacement="BottomRight"/>
-        <TextBox x:Name="Gymnastics_IMC_Weight" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="885,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="%" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="917,129,0,0" Width="17"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="IMC (kg/m², 18-40)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="714,39,0,0" Width="220"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
-        <TextBox x:Name="Errors_Textbox" IsReadOnly="True" SelectionOpacity="0" HorizontalAlignment="Left" Height="53" HorizontalContentAlignment="Center" Margin="10,161,0,0" TextWrapping="Wrap" Text="Error 1&#xD;&#xA;Error 2&#xD;&#xA;Error 3" VerticalAlignment="Top" Width="924" Foreground="Red" BorderBrush="#FFD7D8DA"/>
-        <TextBox x:Name="American_Height_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="442,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="American_Height_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="479,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_Height_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="442,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_Height_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="479,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_IMC_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="705,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="Gymnastics_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="744,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="American_IMC_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="705,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <TextBox x:Name="American_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="744,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <DataGrid x:Name="Training_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="161,270,0,0" VerticalAlignment="Top" Width="405" >
+        <Label Content="Rangos Válidos para Determinar Aptitud" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="630" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="18"/>
+        <Label Content="Fútbol Americano" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,98,0,0" Width="151" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="30"/>
+        <Label Content="Gimnasia" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,136,0,0" Width="151" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="235,79,0,0" Width="34"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <TextBox x:Name="American_Min_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="234,104,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="35" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="American_Max_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="281,104,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="32" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="279,79,0,0" Width="35"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <TextBox x:Name="Gymnastics_Min_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="234,142,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="35" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="Gymnastics_Max_Age" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="281,142,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="32" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Edad (Años)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,52,0,0" Width="83"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
+        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,79,0,0" Width="38"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,79,0,0" Width="38"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <Label Content="Estatura (m)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="349,52,0,0" Width="89"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
+        <Label Content="MIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,79,0,0" Width="48"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <Label Content="MAX" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529,79,0,0" Width="49"  RenderTransformOrigin="0.511,0.935" FontSize="8" FontWeight="Bold" FontStyle="Italic" Height="19"/>
+        <Label Content="IMC (kg/m², 18-40)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,52,0,0" Width="112"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="26" Background="#FFF0F0F0"/>
+        <TextBox x:Name="American_Height_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="350,104,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="38" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="American_Height_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="400,104,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="38" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="Gymnastics_Height_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="350,142,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="38" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="Gymnastics_Height_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="400,142,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="38" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="Gymnastics_IMC_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="465,142,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="48" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="Gymnastics_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="530,142,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="48" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="American_IMC_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="465,104,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="48" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <TextBox x:Name="American_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="530,104,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="48" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <DataGrid x:Name="Training_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="12,222,0,0" VerticalAlignment="Top" Width="405" >
         </DataGrid>
-        <Label Content="Casos de Entrenamiento" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,231,0,0" Width="405" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <Label Content="Casos A Evaluar" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="581,231,0,0" Width="195" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <Label Content="Resultados" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,441,0,0" Width="359" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <Separator  HorizontalAlignment="Left" Height="10" Margin="15,221,0,0" VerticalAlignment="Top" Width="910" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Casos de Entrenamiento" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,183,0,0" Width="405" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="Casos A Evaluar" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="432,183,0,0" Width="195" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="Resultados" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,381,0,0" Width="413" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Separator  HorizontalAlignment="Left" Height="10" Margin="23,171,0,0" VerticalAlignment="Top" Width="597" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -94,11 +52,11 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button Content="Correr Pruebas" HorizontalAlignment="Left" Margin="23,559,0,0" Width="156" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
-        <DataGrid x:Name="Tests_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="581,270,0,0" VerticalAlignment="Top" Width="195" />
-        <DataGrid x:Name="Results_DataGrid" IsReadOnly="True" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="103" Margin="214,476,0,0" VerticalAlignment="Top" Width="359" />
-        <TextBox x:Name="Results_TextBox" IsReadOnly="True" SelectionOpacity="0" HorizontalAlignment="Left" Height="129" Margin="594,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="Black" BorderBrush="#FFD7D8DA"/>
-        <Separator  HorizontalAlignment="Left" Height="10" Margin="15,430,0,0" VerticalAlignment="Top" Width="910" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Correr Pruebas" HorizontalAlignment="Left" Margin="23,509,0,0" Width="156" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
+        <DataGrid x:Name="Tests_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="432,222,0,0" VerticalAlignment="Top" Width="195" />
+        <DataGrid x:Name="Results_DataGrid" IsReadOnly="True" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="116" Margin="214,413,0,0" VerticalAlignment="Top" Width="413" />
+        <TextBox x:Name="Results_TextBox" IsReadOnly="True" SelectionOpacity="0" HorizontalAlignment="Left" Height="136" Margin="12,546,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="615" Foreground="Black" BorderBrush="#FFD7D8DA"/>
+        <Separator  HorizontalAlignment="Left" Height="10" Margin="23,380,0,0" VerticalAlignment="Top" Width="597" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -108,14 +66,14 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <TextBox x:Name="Max_Iterations" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="149,483,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="54" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="Iteraciones Máximas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,477,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
-        <TextBox x:Name="Alpha" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,507,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="Alfa" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,501,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
-        <TextBox x:Name="Bias" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,532,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="Initial Bias" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,526,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
-        <TextBox x:Name="Acceptable_Error" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,461,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <Label Content="Error Aceptable" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,455,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Max_Iterations" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="149,433,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="54" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Iteraciones Máximas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,427,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Alpha" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,457,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Alfa" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,451,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Bias" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,482,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Favor Inicial (Bias)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,476,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Acceptable_Error" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,411,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Error Aceptable" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,405,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
 
     </Grid>
 </Window>

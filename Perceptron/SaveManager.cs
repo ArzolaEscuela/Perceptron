@@ -10,15 +10,12 @@ namespace Perceptron
     {
         public int MinAge { get; set; } = 0;
         public int MaxAge { get; set; } = 0;
-        public float AgeWeight { get; set; } = 0;
 
         public float MinHeight { get; set; } = 0;
         public float MaxHeight { get; set; } = 0;
-        public float HeightWeight { get; set; } = 0;
 
         public float MinIMC { get; set; } = 0;
         public float MaxIMC { get; set; } = 0;
-        public float IMCWeight { get; set; } = 0;
     }
 
     public class Settings

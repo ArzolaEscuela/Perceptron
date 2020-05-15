@@ -13,11 +13,11 @@ namespace Perceptron
             List<Result> results = new List<Result>();
             resultsTextBox.Text = string.Empty;
 
-            resultsTextBox.Text += "Empezando la evaluación de aptitud para \"Fútbol Americano\".\n";
+            resultsTextBox.Text += "=== Empezando la evaluación de aptitud para \"Fútbol Americano\" ===\n";
             bool[] americanResults = ExecutePerceptron(settings.ParameterSettings.MaxIterations, settings.ParameterSettings.AcceptableError, settings.ParameterSettings.Alpha,
                 settings.ParameterSettings.Bias, settings.ParameterSettings.AmericanFootballSettings, settings.TestData, res => res.AptoParaAmericano, settings.InputData, resultsTextBox);
 
-            resultsTextBox.Text += "Empezando la evaluación de aptitud para \"Gimnasia\".\n";
+            resultsTextBox.Text += "=== Empezando la evaluación de aptitud para \"Gimnasia\" ===\n";
             bool[] gymnasticsResults = ExecutePerceptron(settings.ParameterSettings.MaxIterations, settings.ParameterSettings.AcceptableError, settings.ParameterSettings.Alpha,
                 settings.ParameterSettings.Bias, settings.ParameterSettings.GymnasticsSettings, settings.TestData, res => res.AptoParaGimnasia, settings.InputData, resultsTextBox);
 
@@ -51,8 +51,8 @@ namespace Perceptron
                 results[i] = GetResult(GetCriteriaResults(settings, next), weights, bias);
             }
 
-            resultsTextBox.Text += $"La influencia de cada una de las características físicas para determinar la aptitud fue la siguiente:\nEdad: {weights[0]} | Estatura: {weights[1]} | IMC: {weights[2]}\n";
-            resultsTextBox.Text += $"El error final para estos pesos fue de {weightsError}.\n\n";
+            resultsTextBox.Text += $"La influencia de cada una de las características físicas para determinar la aptitud fue la siguiente:\nEdad: {weights[0]*100}% | Estatura: {weights[1]*100}% | IMC: {weights[2]*100}%\n";
+            resultsTextBox.Text += $"El error final para estos pesos fue de {weightsError * 100}%.\n\n";
 
             return results;
         }
@@ -90,16 +90,16 @@ namespace Perceptron
 
         public static float GetError(SportSettings settings, List<Result> trainingCases, Func<Result, bool> expectedResultGetter, float[] currentWeights, float bias)
         {
-            float sum = 0;
+            float errorSum = 0;
             int size = trainingCases.Count;
             for (int i = 0; i < size; ++i)
             {
                 Result testCase = trainingCases[i];
                 bool expectedResult = expectedResultGetter(testCase);
                 bool output = GetResult(GetCriteriaResults(settings, testCase), currentWeights, bias);
-                sum += Math.Abs((expectedResult ? 1 : 0) - (output ? 1 : 0));
+                errorSum += Math.Abs((expectedResult ? 1 : 0) - (output ? 1 : 0));
             }
-            return sum / 2f;
+            return errorSum / ((float)size);
         }
 
         public static float[] UpdateWeights(float[] currentWeights, float alpha, float delta, SportSettings settings, IEvaluatable toEvaluate)

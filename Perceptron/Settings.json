@@ -1,26 +1,24 @@
 {
   "ParameterSettings": {
+    "Alpha": 0.01,
+    "Bias": 0.05,
+    "AcceptableError": 0.05,
+    "MaxIterations": 2000,
     "GymnasticsSettings": {
       "MinAge": 6,
-      "MaxAge": 25,
-      "AgeWeight": 30.0,
+      "MaxAge": 32,
       "MinHeight": 1.3,
       "MaxHeight": 1.6,
-      "HeightWeight": 30.0,
       "MinIMC": 16.5,
-      "MaxIMC": 25.0,
-      "IMCWeight": 40.0
+      "MaxIMC": 25.0
     },
     "AmericanFootballSettings": {
       "MinAge": 16,
       "MaxAge": 35,
-      "AgeWeight": 45.0,
       "MinHeight": 1.72,
       "MaxHeight": 1.88,
-      "HeightWeight": 20.0,
       "MinIMC": 21.0,
-      "MaxIMC": 28.0,
-      "IMCWeight": 35.0
+      "MaxIMC": 28.0
     }
   },
   "TestData": [
@@ -86,6 +84,13 @@
       "Peso": 14.5,
       "AptoParaAmericano": false,
       "AptoParaGimnasia": false
+    },
+    {
+      "Edad": 5,
+      "Estatura": 1.3,
+      "Peso": 30.0,
+      "AptoParaAmericano": false,
+      "AptoParaGimnasia": true
     }
   ],
   "InputData": [
@@ -108,6 +113,11 @@
       "Edad": 25,
       "Estatura": 1.7,
       "Peso": 70.8
+    },
+    {
+      "Edad": 6,
+      "Estatura": 1.1,
+      "Peso": 20.0
     }
   ]
 }
