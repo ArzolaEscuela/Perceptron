@@ -23,5 +23,18 @@ namespace Perceptron
         }
 
         public static float AsFloat(this Slider slider) => (float)slider.Value;
+
+        public static string ContentsAsString<T>(this T[] array)
+        {
+            if (array.Length == 0) { return "[]"; }
+
+            string result = $"[{array[0].ToString()}";
+            int size = array.Length;
+            for (int i = 1; i < size; i++)
+            {
+                result = $"{result}, {array[i].ToString()}";
+            }
+            return $"{result}]";
+        }
     }
 }

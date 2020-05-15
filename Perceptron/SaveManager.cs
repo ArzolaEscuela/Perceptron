@@ -23,6 +23,11 @@ namespace Perceptron
 
     public class Settings
     {
+        public float Alpha { get; set; } = 0.0f;
+        public float Bias { get; set; } = 0.0f;
+        public float AcceptableError { get; set; } = 0.0f;
+        public int MaxIterations { get; set; } = 1000;
+
         public SportSettings GymnasticsSettings { get; set; } = new SportSettings();
         public SportSettings AmericanFootballSettings { get; set; } = new SportSettings();
     }
@@ -46,7 +51,7 @@ namespace Perceptron
         {
             TestData = MainWindow.testData,
             InputData = MainWindow.inputData,
-            ParameterSettings =  MainWindow.CurrentSettings
+            ParameterSettings = MainWindow.CurrentSettings
         };
 
         //------------------------------------------------------------------------------------//

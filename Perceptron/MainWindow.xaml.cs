@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,7 +10,14 @@ using Newtonsoft.Json;
 
 namespace Perceptron
 {
-    public class Result
+    public interface IEvaluatable
+    {
+        int Edad { get; set; }
+        float Estatura { get; set; }
+        float IMC { get; }
+    }
+
+    public class Result : IEvaluatable
     {
         private int _edad;
         private float _estatura;
@@ -50,7 +59,7 @@ namespace Perceptron
         }
     }
 
-    public class InputData
+    public class InputData : IEvaluatable
     {
         private int _edad;
         private float _estatura;
@@ -84,6 +93,7 @@ namespace Perceptron
         /*----------------------------------- FIELDS -----------------------------------------*/
         //------------------------------------------------------------------------------------//
 
+        private static MainWindow _instance;
         public static List<Result> testData = new List<Result>();
         public static List<InputData> inputData = new List<InputData>();
         private static List<Result> _results = new List<Result>();
@@ -94,11 +104,6 @@ namespace Perceptron
 
         public static Settings CurrentSettings => _instance._CurrentSettings;
 
-        //------------------------------------------------------------------------------------//
-        /*---------------------------------- METHODS -----------------------------------------*/
-        //------------------------------------------------------------------------------------//
-
-        private static MainWindow _instance;
         private Settings _CurrentSettings => new Settings()
         {
             AmericanFootballSettings = new SportSettings()
@@ -128,8 +133,16 @@ namespace Perceptron
                 MinIMC = Gymnastics_IMC_Min.AsFloat(),
                 MaxIMC = Gymnastics_IMC_Max.AsFloat(),
                 IMCWeight = Gymnastics_IMC_Weight.AsFloat(),
-            }
+            },
+            MaxIterations = Max_Iterations.AsInt(),
+            Alpha = Alpha.AsFloat(),
+            Bias = Bias.AsFloat(),
+            AcceptableError = Acceptable_Error.AsFloat()
         };
+
+        //------------------------------------------------------------------------------------//
+        /*---------------------------------- METHODS -----------------------------------------*/
+        //------------------------------------------------------------------------------------//
 
         public MainWindow()
         {
@@ -169,7 +182,7 @@ namespace Perceptron
         {
             slider.ValueChanged += (sender, args) =>
             {
-                string newValue = slider.AsFloat().ToString();
+                string newValue = slider.AsFloat().ToString(CultureInfo.InvariantCulture);
                 if (percentageBox.Text.Equals(newValue)) { return; }
                 percentageBox.Text = newValue;
             };
@@ -224,6 +237,11 @@ namespace Perceptron
             Gymnastics_IMC_Max.TextChanged += OnValueChanged;
             Gymnastics_IMC_Weight.TextChanged += OnValueChanged;
 
+            Acceptable_Error.TextChanged += OnValueChanged;
+            Max_Iterations.TextChanged += OnValueChanged;
+            Alpha.TextChanged += OnValueChanged;
+            Bias.TextChanged += OnValueChanged;
+
             #endregion Bind On Value Changed Events
 
             #region Bind Sliders
@@ -242,32 +260,37 @@ namespace Perceptron
 
             AllSettings settings = SaveManager.LoadSettings();
 
-            American_Min_Age.Text = settings.ParameterSettings.AmericanFootballSettings.MinAge.ToString();
-            American_Max_Age.Text = settings.ParameterSettings.AmericanFootballSettings.MaxAge.ToString();
-            American_Age_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.AgeWeight.ToString();
+            American_Min_Age.Text = settings.ParameterSettings.AmericanFootballSettings.MinAge.ToString(CultureInfo.InvariantCulture);
+            American_Max_Age.Text = settings.ParameterSettings.AmericanFootballSettings.MaxAge.ToString(CultureInfo.InvariantCulture);
+            American_Age_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.AgeWeight.ToString(CultureInfo.InvariantCulture);
 
-            American_Height_Min.Text = settings.ParameterSettings.AmericanFootballSettings.MinHeight.ToString();
-            American_Height_Max.Text = settings.ParameterSettings.AmericanFootballSettings.MaxHeight.ToString();
-            American_Height_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.HeightWeight.ToString();
+            American_Height_Min.Text = settings.ParameterSettings.AmericanFootballSettings.MinHeight.ToString(CultureInfo.InvariantCulture);
+            American_Height_Max.Text = settings.ParameterSettings.AmericanFootballSettings.MaxHeight.ToString(CultureInfo.InvariantCulture);
+            American_Height_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.HeightWeight.ToString(CultureInfo.InvariantCulture);
 
-            American_IMC_Min.Text = settings.ParameterSettings.AmericanFootballSettings.MinIMC.ToString();
-            American_IMC_Max.Text = settings.ParameterSettings.AmericanFootballSettings.MaxIMC.ToString();
-            American_IMC_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.IMCWeight.ToString();
+            American_IMC_Min.Text = settings.ParameterSettings.AmericanFootballSettings.MinIMC.ToString(CultureInfo.InvariantCulture);
+            American_IMC_Max.Text = settings.ParameterSettings.AmericanFootballSettings.MaxIMC.ToString(CultureInfo.InvariantCulture);
+            American_IMC_Weight.Text = settings.ParameterSettings.AmericanFootballSettings.IMCWeight.ToString(CultureInfo.InvariantCulture);
 
-            Gymnastics_Min_Age.Text = settings.ParameterSettings.GymnasticsSettings.MinAge.ToString();
-            Gymnastics_Max_Age.Text = settings.ParameterSettings.GymnasticsSettings.MaxAge.ToString();
-            Gymnastics_Age_Weight.Text = settings.ParameterSettings.GymnasticsSettings.AgeWeight.ToString();
+            Gymnastics_Min_Age.Text = settings.ParameterSettings.GymnasticsSettings.MinAge.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_Max_Age.Text = settings.ParameterSettings.GymnasticsSettings.MaxAge.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_Age_Weight.Text = settings.ParameterSettings.GymnasticsSettings.AgeWeight.ToString(CultureInfo.InvariantCulture);
 
-            Gymnastics_Height_Min.Text = settings.ParameterSettings.GymnasticsSettings.MinHeight.ToString();
-            Gymnastics_Height_Max.Text = settings.ParameterSettings.GymnasticsSettings.MaxHeight.ToString();
-            Gymnastics_Height_Weight.Text = settings.ParameterSettings.GymnasticsSettings.HeightWeight.ToString();
+            Gymnastics_Height_Min.Text = settings.ParameterSettings.GymnasticsSettings.MinHeight.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_Height_Max.Text = settings.ParameterSettings.GymnasticsSettings.MaxHeight.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_Height_Weight.Text = settings.ParameterSettings.GymnasticsSettings.HeightWeight.ToString(CultureInfo.InvariantCulture);
 
-            Gymnastics_IMC_Min.Text = settings.ParameterSettings.GymnasticsSettings.MinIMC.ToString();
-            Gymnastics_IMC_Max.Text = settings.ParameterSettings.GymnasticsSettings.MaxIMC.ToString();
-            Gymnastics_IMC_Weight.Text = settings.ParameterSettings.GymnasticsSettings.IMCWeight.ToString();
+            Gymnastics_IMC_Min.Text = settings.ParameterSettings.GymnasticsSettings.MinIMC.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_IMC_Max.Text = settings.ParameterSettings.GymnasticsSettings.MaxIMC.ToString(CultureInfo.InvariantCulture);
+            Gymnastics_IMC_Weight.Text = settings.ParameterSettings.GymnasticsSettings.IMCWeight.ToString(CultureInfo.InvariantCulture);
 
             inputData = settings.InputData;
             testData = settings.TestData;
+
+            Acceptable_Error.Text = settings.ParameterSettings.AcceptableError.ToString(CultureInfo.InvariantCulture);
+            Max_Iterations.Text = settings.ParameterSettings.MaxIterations.ToString(CultureInfo.InvariantCulture);
+            Alpha.Text = settings.ParameterSettings.Alpha.ToString(CultureInfo.InvariantCulture);
+            Bias.Text = settings.ParameterSettings.Bias.ToString(CultureInfo.InvariantCulture);
 
             SaveManager.SaveChanges();
 
@@ -313,5 +336,10 @@ namespace Perceptron
         }
 
         #endregion Number TextBox Events
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PerceptronCore.RunPerceptron(SaveManager.LoadSettings(), Results_DataGrid, Results_TextBox);
+        }
     }
 }

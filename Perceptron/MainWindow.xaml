@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Perceptron"
         mc:Ignorable="d"
-        Title="Perceptron - Aptitud Deportiva - Luis Arzola (A01186956)" Height="499" Width="966" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Perceptron - Aptitud Deportiva - Luis Arzola (A01186956)" Height="630" Width="966" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -79,11 +79,11 @@
         <TextBox x:Name="Gymnastics_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="744,129,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
         <TextBox x:Name="American_IMC_Min" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="705,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
         <TextBox x:Name="American_IMC_Max" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="744,91,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="32" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
-        <DataGrid x:Name="Training_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="19,270,0,0" VerticalAlignment="Top" Width="359" >
+        <DataGrid x:Name="Training_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="161,270,0,0" VerticalAlignment="Top" Width="405" >
         </DataGrid>
-        <Label Content="Entrenamiento" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,237,0,0" Width="324" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <Label Content="Pruebas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="393,237,0,0" Width="169" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
-        <Label Content="Resultados" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="577,237,0,0" Width="359" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="Casos de Entrenamiento" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,231,0,0" Width="405" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="Casos A Evaluar" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="581,231,0,0" Width="195" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
+        <Label Content="Resultados" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,441,0,0" Width="359" FontWeight="Bold" RenderTransformOrigin="0.511,0.935" FontSize="16" Height="28"/>
         <Separator  HorizontalAlignment="Left" Height="10" Margin="15,221,0,0" VerticalAlignment="Top" Width="910" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
@@ -94,10 +94,28 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button Content="Correr Pruebas" HorizontalAlignment="Left" Margin="577,429,0,0" Width="359" Height="20" VerticalAlignment="Top"/>
-        <DataGrid x:Name="Tests_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="393,270,0,0" VerticalAlignment="Top" Width="169" />
-        <DataGrid x:Name="Results_DataGrid" IsReadOnly="True" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="96" Margin="577,270,0,0" VerticalAlignment="Top" Width="359" />
-        <TextBox x:Name="Results_TextBox" IsReadOnly="True" SelectionOpacity="0" HorizontalAlignment="Left" Height="53" Margin="577,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" Foreground="Black" BorderBrush="#FFD7D8DA"/>
+        <Button Content="Correr Pruebas" HorizontalAlignment="Left" Margin="23,559,0,0" Width="156" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
+        <DataGrid x:Name="Tests_DataGrid" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="581,270,0,0" VerticalAlignment="Top" Width="195" />
+        <DataGrid x:Name="Results_DataGrid" IsReadOnly="True" CanUserAddRows="True" CanUserReorderColumns="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="103" Margin="214,476,0,0" VerticalAlignment="Top" Width="359" />
+        <TextBox x:Name="Results_TextBox" IsReadOnly="True" SelectionOpacity="0" HorizontalAlignment="Left" Height="129" Margin="594,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="Black" BorderBrush="#FFD7D8DA"/>
+        <Separator  HorizontalAlignment="Left" Height="10" Margin="15,430,0,0" VerticalAlignment="Top" Width="910" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <TextBox x:Name="Max_Iterations" HorizontalAlignment="Left" MaxLines="1" Height="19" Margin="149,483,0,0" TextWrapping="Wrap" Text="Int" VerticalAlignment="Top" Width="54" TextChanged="OnIntTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Iteraciones Máximas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,477,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Alpha" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,507,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Alfa" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,501,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Bias" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,532,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Initial Bias" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,526,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
+        <TextBox x:Name="Acceptable_Error" MaxLines="1" HorizontalAlignment="Left" Height="19" Margin="149,461,0,0" TextWrapping="Wrap" Text="Float" VerticalAlignment="Top" Width="54" TextChanged="OnFloatTextBoxTextChanged" RenderTransformOrigin="0.947,3.456"/>
+        <Label Content="Error Aceptable" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,455,0,0" Width="139"  RenderTransformOrigin="0.511,0.935" FontSize="11" FontWeight="Bold" Height="25" Background="{x:Null}"/>
 
     </Grid>
 </Window>
