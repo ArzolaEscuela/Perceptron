@@ -47,14 +47,14 @@
       "Edad": 13,
       "Estatura": 1.56,
       "Peso": 45.8,
-      "AptoParaAmericano": true,
+      "AptoParaAmericano": false,
       "AptoParaGimnasia": true
     },
     {
       "Edad": 15,
       "Estatura": 1.6,
       "Peso": 84.2,
-      "AptoParaAmericano": true,
+      "AptoParaAmericano": false,
       "AptoParaGimnasia": false
     },
     {
@@ -76,7 +76,7 @@
       "Estatura": 1.72,
       "Peso": 75.2,
       "AptoParaAmericano": true,
-      "AptoParaGimnasia": true
+      "AptoParaGimnasia": false
     },
     {
       "Edad": 3,
